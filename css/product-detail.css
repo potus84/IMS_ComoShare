@@ -1,0 +1,36 @@
+.room-detail{
+	margin: 0 auto;
+	padding: 20px;
+	border: 5px 5px;
+	box-shadow: 1px 2px 1px rgb(0,0,0,2);
+}
+.ft-img{
+	width: 500px;
+	height: 600px;
+	margin: 0 auto;
+	transform: scale(0.7);
+	background-position: center center;
+	background-repeat: no-repeat;
+}
+.right-des{
+	padding: 20px;
+
+}
+.btnBook {
+    position: relative;
+    top: 70%;
+    left: 60%;
+    color: white;
+    background: coral;
+    padding: 8px 20px;
+    border-radius: 2px;
+    text-decoration: none;
+    display: inline-block;
+}
+label.price{
+	color: rgb(255,100,0);
+}
+span.price{
+	color: rgb(255,100,0);
+	font-size: 13px!important;
+}
