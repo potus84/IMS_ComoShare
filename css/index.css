@@ -213,8 +213,11 @@
 
 .header .register-login .sign-in {
 	border: 1px solid #0192B5;
-	padding: 0;
+	padding: 10 px;
 	border-radius: 4px;
+	background: #9999ff;
+	color: #FFFFFF;
+	font-weight: bold;
 }
 
 .header .register-login form {
@@ -546,6 +549,7 @@
 	font-size: 35px;
 	text-decoration: none;
 	color: #fff;
+	margin: 0 auto;
 	font-family: 'Trocchi', serif;
 	font-weight: 600;
 }
@@ -716,7 +720,6 @@
 	border-radius: 2px;
 	z-index: 99;
 }
-
 #go-top i {
 	color: #fff;
     font-size: 40px;
@@ -725,3 +728,19 @@
     top: -2px;
     left: 8px;
 }
+#moreAccom {
+	display: relative;
+	width: 40px;
+	height: 40px;
+	margin: 0 auto;
+	background: #ff8533;
+	border-radius: 2px;
+}
+#moreAccom a i {
+    color: white;
+    font-size: 50;
+    position: relative;
+    display: inline;
+    left: -9px;
+    top: -1px;
+
