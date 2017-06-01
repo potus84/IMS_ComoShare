@@ -22,6 +22,19 @@
 			$this->setQuery($sql);
 			return $this->loadRow();
 		}
+		public function getAccommodationByLocation($location, $limit){
+			$sql = "SELECT * FROM accommodation WHERE city='{$location}'";
+			echo $location;
+			$this->setQuery($sql);
+			//print_r(this->loadAllRows());
+			return $this->loadAllRows();
+		}
+		public function getAccommodationByAvailibility($availability, $limit){
+			$sql = "SELECT * FROM accommodation WHERE availability=$availability";
+			$this->setQuery($sql);
+			//print_r(this->loadAllRows());
+			return $this->loadAllRows();
+		}
 		/*
 		*For admin
 		*/

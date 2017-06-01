@@ -24,8 +24,9 @@
             <p class="top-product">MORE ACCOMODATIONS</p>
             <?php 
                 $i=0;
-                foreach ($houses as $house) {
-                $i++;
+                if(is_array($houses) || is_object($houses)){
+                    foreach ($houses as $house) {
+                    $i++;
             ?>
             <div class="product-block col-sm-4 col-xs-12">
                 <div class="list-top-product col-sm-12 col-xs-12">
@@ -51,6 +52,7 @@
                 }
 
                 } 
+            }
             ?>
 
      

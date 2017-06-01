@@ -27,9 +27,27 @@
     <nav class="menu clearfix">
         <ul class="main-menu clearfix">
             <li><a href="index.php">Homepage</a></li>
-            <li href="#"><a>Accommodation Type</a></li>
-            <li href="#"><a>Location</a></li>
-            <li href="#"><a>Promotion</a></li>
+            <li href="#"><a>Accommodation Type</a>
+                <ul class="sub-menu">
+                    <li> <a href="moreAccom.php?size=1" class="active">Single</a></li>
+                    <li> <a href="moreAccom.php?size=2" class="active">Double bed</a></li>
+                    <li> <a href="moreAccom.php?size=3" class="active">Triple Single Beds</a></li>
+
+                </ul>
+            </li>
+
+            <li href="#"><a>Location</a>
+                <ul class="sub-menu">
+                    <li> <a href="moreAccom.php?loc=Porto" class="active">Porto</a></li>
+                    <li> <a href="moreAccom.php?loc=Lisbon" class="active">Lisbon</a></li>
+                    <li> <a href="moreAccom.php?loc=Coimbra" class="active">Coimbra</a></li>
+                    <li> <a href="moreAccom.php?loc=Sintra" class="active">Sintra</a></li>
+
+                </ul>
+                
+            </li>
+            <li href="#"><a>Promotion</a>
+            </li>
         </ul>
     </nav>
     <a href="#" class="toggle-menu"><i class="fa fa-bars" aria-hidden="true"></i></a>
