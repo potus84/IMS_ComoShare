@@ -23,10 +23,17 @@ require('model/m_accommodation.php');
 		public function showMoreHouses($limit)
 		{
 			//Models
+			//$houses='';
 			$db = new Accommodation();
-			$houses=$db->getRandomAccommodation($limit);
+			if(isset($_REQUEST['loc'])){
+				$location = $_REQUEST['loc'];
+				$houses=$db->getAccommodationByLocation($location, $limit);
+				require 'view/v_moreAccom.php';
+			} else {
+				$houses=$db->getRandomAccommodation($limit);
+				require 'view/v_moreAccom.php';
+			}
 			//Views
-			require 'view/v_moreAccom.php';
 
 		}
 

@@ -7,7 +7,12 @@ class cMoreAccomodation
 		{
 			//Models
 			$db = new Accommodation();
-			$houses=$db->getRandomAccommodation($limit);
+			if(isset($_REQUEST['loc'])){
+				$location = $_REQUEST['loc'];
+				$houses=$db->getRandomAccommodation($location, $limit);
+			} else {
+				//$houses=$db->getRandomAccommodation($limit);
+			}
 			//Views
 			require 'view/v_moreAccom.php';
 		}
