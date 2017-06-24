@@ -15,7 +15,7 @@
 </head>
 <body>
 	<?php
-	include('header.php');
+	include('view/header.php');
 	?>
 
 	<div class="main-form container col-sm-4 col-sm-offset-4">
