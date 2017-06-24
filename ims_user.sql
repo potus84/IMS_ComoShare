@@ -16,6 +16,7 @@ CREATE TABLE `user` (
   `firstname` varchar(50) NOT NULL,
   `lastname` varchar(50) NOT NULL,
   `email` varchar(255) NOT NULL,
+  `phone` varchar(255) NOT NULL,
   `admin` BOOLEAN
 )ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
@@ -24,10 +25,10 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`id`, `username`, `password`, `firstname`, `lastname`, `email`, `admin`) VALUES
-(10, 'admin', 'admin', 'Admin', 'User', 'admin@test.com', true),
-(12, 'test', 'test', 'Test', 'Elek', 'test@test.com', false),
-(13, 'john', '123456', 'John', 'Doe', 'john@test.com', false),
-(14, 'jane', '123456', 'Jane', 'Doe', 'jane@test.com', false);
+(10, 'admin', 'admin', 'Admin', 'User', 'admin@test.com', '123456789',  true),
+(12, 'test', 'test', 'Test', 'Elek', 'test@test.com','123456789', false),
+(13, 'john', '123456', 'John', 'Doe', 'john@test.com','123456789', false),
+(14, 'jane', '123456', 'Jane', 'Doe', 'jane@test.com','123456789', false);
 
 --
 -- Indexes for table `accommodation`
