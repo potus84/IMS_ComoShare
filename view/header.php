@@ -46,7 +46,7 @@
                 </ul>
                 
             </li>
-            <li href="#"><a>Promotion</a>
+            <li href="#"><a href="myReservation.php">My Reservation</a>
             </li>
         </ul>
     </nav>
@@ -58,6 +58,8 @@
                 <a href="#">Location<span class="arrow">&#9660;</span></a>
             </li>
             <li href="#"><a>Promotion<span class="arrow">&#9660;</span></a>
+            </li>
+            <li href="#"><a>My Reservations<span class="arrow">&#9660;</span></a>
             </li>
         </ul>
     </nav>

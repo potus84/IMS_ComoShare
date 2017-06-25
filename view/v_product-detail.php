@@ -37,7 +37,7 @@
 			<label class="price"><?php echo $room['price']?>&euro;</label>
 			<div id="map"></div>
 			<div class="btnBook">
-				<a href="reservationPage.php">Books</a>
+				<a href="puttingDate.php?accommodation_id=<?php echo $room['id']?>">Books</a>
 				
 			</div>
 		</div> <!-- /right content -->

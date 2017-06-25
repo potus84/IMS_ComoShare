@@ -94,7 +94,7 @@ require_once 'model/m_accommodation.php';
 		}
 		public function saveContact($db)
 		{
-			$title = 'Add new contact';
+			$title = 'Add new accommodation';
 			$roomname = '';
 			$city = '';
 			$lat = '';
@@ -109,94 +109,94 @@ require_once 'model/m_accommodation.php';
 				$lat = isset($_REQUEST['lat'])?$_REQUEST['lat']:NULL;
 				$longi = isset($_REQUEST['longi'])?$_REQUEST['longi']:NULL;
 				//$img = isset($_REQUEST['img'])?$_REQUEST['img']:NULL;
-	$uploads_dir = "images";
-	$img = '' ;
-    if (isset($_FILES['image'])){
+				$uploads_dir = "images";
+				$img = '' ;
+				if (isset($_FILES['image'])){
     	$tmp_name = $_FILES['image']['tmp_name']; //temporary name
     $name = $_FILES['image']['name']; // original name
     $img= "$uploads_dir/".$name; //final name
     move_uploaded_file($tmp_name, $img);
-    } 
-    
+} 
 
 
-				$price = isset($_REQUEST['price'])?$_REQUEST['price']:NULL;
-				$availability = isset($_REQUEST['availability'])?$_REQUEST['availability']:NULL;
-				$description = isset($_REQUEST['description'])?$_REQUEST['description']:NULL;
-				try {
-					$db->insertNewAccommodation($roomname, $city, $lat, $longi, $img, $price, $availability, $description);
+
+$price = isset($_REQUEST['price'])?$_REQUEST['price']:NULL;
+$availability = isset($_REQUEST['availability'])?$_REQUEST['availability']:NULL;
+$description = isset($_REQUEST['description'])?$_REQUEST['description']:NULL;
+try {
+	$db->insertNewAccommodation($roomname, $city, $lat, $longi, $img, $price, $availability, $description);
 					//this->redirect('productBackOffice.php');
-					header('Location: '.'productBackOffice.php');
-				} catch (Exception $e) {
-					echo "Error".$e;
-				}
+	header('Location: '.'productBackOffice.php');
+} catch (Exception $e) {
+	echo "Error".$e;
+}
 
-			}
-			
-			include 'view/v_AccomForm.php';
-		}
-		public function updateContact($db)
-		{
-			$title = 'Update room';
-			if(isset($_GET['id'])){
-				$id = isset($_GET['id'])?$_GET['id']:-1;
-				$house=$db->getAccommodation($id);
-				$roomname = $house['roomname'];
-				$city = $house['city'];
-				$lat  = $house['lat'];
-				$longi  = $house['longi'];
-				$img  = $house['img'];
-				$price  = $house['price'];
-				$availability  = $house['availability'];
-				$description  = $house['description'];
-				if(isset($_POST['form-submitted'])){
-					$roomname = isset($_REQUEST['roomname'])?$_REQUEST['roomname']:NULL;
-					$city = isset($_REQUEST['city'])?$_REQUEST['city']:NULL;
-					$lat = isset($_REQUEST['lat'])?$_REQUEST['lat']:NULL;
-					$longi = isset($_REQUEST['longi'])?$_REQUEST['longi']:NULL;
-					$uploads_dir = "images";
-	$img = '' ;
-    if (isset($_FILES['image'])){
+}
+
+include 'view/v_AccomForm.php';
+}
+public function updateContact($db)
+{
+	$title = 'Update room';
+	if(isset($_GET['id'])){
+		$id = isset($_GET['id'])?$_GET['id']:-1;
+		$house=$db->getAccommodation($id);
+		$roomname = $house['roomname'];
+		$city = $house['city'];
+		$lat  = $house['lat'];
+		$longi  = $house['longi'];
+		$img  = $house['img'];
+		$price  = $house['price'];
+		$availability  = $house['availability'];
+		$description  = $house['description'];
+		if(isset($_POST['form-submitted'])){
+			$roomname = isset($_REQUEST['roomname'])?$_REQUEST['roomname']:NULL;
+			$city = isset($_REQUEST['city'])?$_REQUEST['city']:NULL;
+			$lat = isset($_REQUEST['lat'])?$_REQUEST['lat']:NULL;
+			$longi = isset($_REQUEST['longi'])?$_REQUEST['longi']:NULL;
+			$uploads_dir = "images";
+			$img = '' ;
+			if (isset($_FILES['image'])){
     	$tmp_name = $_FILES['image']['tmp_name']; //temporary name
     $name = $_FILES['image']['name']; // original name
     $img= "$uploads_dir/".$name; //final name
     move_uploaded_file($tmp_name, $img);
-    } 
-					$price = isset($_POST['price'])?$_REQUEST['price']:NULL;
-					$availability = isset($_REQUEST['availability'])?$_REQUEST['availability']:NULL;
-					$description = isset($_REQUEST['description'])?$_REQUEST['description']:NULL;
-					try {
-						$db->updateAccomodation($id, $roomname, $city, $lat, $longi, $img, $price, $availability, $description);
+} 
+$price = isset($_POST['price'])?$_REQUEST['price']:NULL;
+$availability = isset($_REQUEST['availability'])?$_REQUEST['availability']:NULL;
+$description = isset($_REQUEST['description'])?$_REQUEST['description']:NULL;
+try {
+	$db->updateAccomodation($id, $roomname, $city, $lat, $longi, $img, $price, $availability, $description);
 					//this->redirect('productBackOffice.php');
 
-						header('Location: '.'productBackOffice.php');
-					} catch (Exception $e) {
-						echo "Error".$e;
-					}
-				}
+	header('Location: '.'productBackOffice.php');
+} catch (Exception $e) {
+	echo "Error".$e;
+}
+}
 
-				
-			}
-			
-						
-			include 'view/v_AccomForm.php';
+
+}
+
+
+include 'view/v_AccomForm.php';
+}
+
+
+public function deleteContact($db)
+{
+	echo "Start delete<br/>";
+	if (isset($_GET['id'])) {
+		try {
+			$id=$_GET['id'];
+			$db->deleteAccomodation($id);
+					//this->redirect('productBackOffice.php');
+			header('Location: '.'productBackOffice.php');
+		} catch (Exception $e) {
+			echo "Error".$e;
 		}
-
-
-		public function deleteContact($db)
-		{
-			echo "Start delete<br/>";
-			if (isset($_GET['id'])) {
-				try {
-					$id=$_GET['id'];
-					$db->deleteAccomodation($id);
-					//this->redirect('productBackOffice.php');
-					header('Location: '.'productBackOffice.php');
-				} catch (Exception $e) {
-					echo "Error".$e;
-				}
-			}
-
-		} 
 	}
-	?>
+
+} 
+}
+?>
