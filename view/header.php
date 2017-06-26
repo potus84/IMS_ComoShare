@@ -1,4 +1,4 @@
-<link rel="stylesheet" type="text/css" href="/css/index.css">
+<link rel="stylesheet" type="text/css" href="css/index.css">
 
 
 <div class="header container-fluid">
@@ -8,7 +8,7 @@
 
     <?php
         if(isset($_SESSION['name'])) {
-            echo "Logged in as " . $_SESSION['name'];
+            echo "Logged in as " . $_SESSION['name'] . " USERID: " . $_SESSION['user_id'];
             echo "<div class='register-login col-sm-3'>
                     <span><a href='logout.php' class='sign-in fa fa-sign-in' aria-hidden='true'>Logout</a></span>
                   </div>";

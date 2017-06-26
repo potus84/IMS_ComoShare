@@ -1,4 +1,10 @@
 <?php
+if (session_status() == PHP_SESSION_NONE) {
+    session_start();
+}
+
+
+
 require('model/m_reservation.php');	
 require('model/m_accommodation.php');	
 	/**
@@ -83,6 +89,8 @@ require('model/m_accommodation.php');
 			} else {
 				echo "Error: " . $sql . "<br>" . $conn->error;
 			}
+
+            //header('Refresh: 5; URL = myReservation.php');
 			header('Location: '.'myReservation.php');
 
 
