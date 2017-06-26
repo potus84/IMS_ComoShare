@@ -28,12 +28,17 @@ require('model/m_accommodation.php');
 			if(isset($_REQUEST['loc'])){
 				$location = $_REQUEST['loc'];
 				$houses=$db->getAccommodationByLocation($location, $limit);
-				require 'view/v_moreAccom.php';
-			} else {
+				
+			} else if(isset($_REQUEST['size'])){
+				$size = $_REQUEST['size'];
+				$houses=$db->getAccommodationByAvailibility($size, $limit);
+			}
+			else {
 				$houses=$db->getRandomAccommodation($limit);
-				require 'view/v_moreAccom.php';
+				//require 'view/v_moreAccom.php';
 			}
 			//Views
+			require 'view/v_moreAccom.php';
 
 		}
 

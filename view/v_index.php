@@ -1,3 +1,9 @@
+<?php
+if (session_status() == PHP_SESSION_NONE) {
+    session_start();
+}
+?>
+
 <html>
 <head>
     <title>CommoShare - Main page</title>
@@ -12,20 +18,8 @@
     <link rel="stylesheet" href="css/index.css">
     <!--Script-->
     <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
-    <script src="jquery.cycle.all.js"></script>
 
-    <script> 
-        $(document).ready(function() {
-            $('#shuffle').cycle({ 
-                fx:     'shuffle', 
-                delay:  -500
-            });
-            $('#caption').cycle({ 
-                fx:     'scrollRight', 
-                delay:  -500
-            });
-        });
-    </script> <!-- /End of script -->
+
 
 </head>
 

@@ -30,7 +30,7 @@
 			return $this->loadAllRows();
 		}
 		public function getAccommodationByAvailibility($availability, $limit){
-			$sql = "SELECT * FROM accommodation WHERE availability=$availability";
+			$sql = "SELECT * FROM accommodation WHERE `availability` = $availability";
 			$this->setQuery($sql);
 			//print_r(this->loadAllRows());
 			return $this->loadAllRows();

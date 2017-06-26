@@ -6,21 +6,21 @@
         <a href="index.php" class="site-title"><img src="images/logo.png" alt="logo-commoshare"></a>
     </div>
 
-    <div class="register-login col-sm-3">
-        <span><a href="" class="sign-in fa fa-sign-in" aria-hidden="true">Sign in</a></span>
-        <span><a href="" class="sign-in fa fa-user-o" aria-hidden="true">Sign up</a></span>
-    </div>
-    <!-- <div class="register-login col-sm-3">
-        <ul>
-            <li>
-                <span><a href="" class="sign-in fa fa-sign-in" aria-hidden="true">Sign in</a></span>
-            </li>
-            <li>
-                <span><a href="" class="sign-in fa fa-user-o" aria-hidden="true">Sign up</a></span>
-            </li>
-        </ul> 
+    <?php
+        if(isset($_SESSION['name'])) {
+            echo "Logged in as " . $_SESSION['name'] . " USERID: " . $_SESSION['user_id'];
+            echo "<div class='register-login col-sm-3'>
+                    <span><a href='logout.php' class='sign-in fa fa-sign-in' aria-hidden='true'>Logout</a></span>
+                  </div>";
+        }
+        else {
+            echo "<div class='register-login col-sm-3'>
+                    <span><a href='login.php' class='sign-in fa fa-sign-in' aria-hidden='true'>Sign in</a></span>
+                    <span><a href='registerForm.php' class='sign-in fa fa-user-o' aria-hidden='true'>Sign up</a></span>
+                  </div>";
+        }
 
-    </div>    -->
+    ?>
 
 </div>
 <div class="menu-wrap container-fluid">
@@ -46,7 +46,7 @@
                 </ul>
                 
             </li>
-            <li href="#"><a>Promotion</a>
+            <li href="#"><a href="myReservation.php">My Reservation</a>
             </li>
         </ul>
     </nav>
@@ -58,6 +58,8 @@
                 <a href="#">Location<span class="arrow">&#9660;</span></a>
             </li>
             <li href="#"><a>Promotion<span class="arrow">&#9660;</span></a>
+            </li>
+            <li href="#"><a>My Reservations<span class="arrow">&#9660;</span></a>
             </li>
         </ul>
     </nav>
