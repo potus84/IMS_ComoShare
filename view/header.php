@@ -6,21 +6,21 @@
         <a href="index.php" class="site-title"><img src="images/logo.png" alt="logo-commoshare"></a>
     </div>
 
-    <div class="register-login col-sm-3">
-        <span><a href="login.php" class="sign-in fa fa-sign-in" aria-hidden="true">Sign in</a></span>
-        <span><a href="register.php" class="sign-in fa fa-user-o" aria-hidden="true">Sign up</a></span>
-    </div>
-    <!-- <div class="register-login col-sm-3">
-        <ul>
-            <li>
-                <span><a href="" class="sign-in fa fa-sign-in" aria-hidden="true">Sign in</a></span>
-            </li>
-            <li>
-                <span><a href="" class="sign-in fa fa-user-o" aria-hidden="true">Sign up</a></span>
-            </li>
-        </ul> 
+    <?php
+        if(isset($_SESSION['name'])) {
+            echo "Logged in as " . $_SESSION['name'];
+            echo "<div class='register-login col-sm-3'>
+                    <span><a href='logout.php' class='sign-in fa fa-sign-in' aria-hidden='true'>Logout</a></span>
+                  </div>";
+        }
+        else {
+            echo "<div class='register-login col-sm-3'>
+                    <span><a href='login.php' class='sign-in fa fa-sign-in' aria-hidden='true'>Sign in</a></span>
+                    <span><a href='register.php' class='sign-in fa fa-user-o' aria-hidden='true'>Sign up</a></span>
+                  </div>";
+        }
 
-    </div>    -->
+    ?>
 
 </div>
 <div class="menu-wrap container-fluid">

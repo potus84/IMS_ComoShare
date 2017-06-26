@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <!doctype html>
 <head>
 	<title>CommoShare - Main page</title>
