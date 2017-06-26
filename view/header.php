@@ -1,4 +1,4 @@
-<link rel="stylesheet" type="text/css" href="css/index.css">
+<link rel="stylesheet" type="text/css" href="/css/index.css">
 
 
 <div class="header container-fluid">
@@ -16,7 +16,7 @@
         else {
             echo "<div class='register-login col-sm-3'>
                     <span><a href='login.php' class='sign-in fa fa-sign-in' aria-hidden='true'>Sign in</a></span>
-                    <span><a href='register.php' class='sign-in fa fa-user-o' aria-hidden='true'>Sign up</a></span>
+                    <span><a href='registerForm.php' class='sign-in fa fa-user-o' aria-hidden='true'>Sign up</a></span>
                   </div>";
         }
 

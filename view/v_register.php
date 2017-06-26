@@ -28,7 +28,7 @@ include('view/header.php');
 
 
 <div class="content container">
-    <p class="top-product">REGISTER PAGE</p>
+    <p class="top-product">REGISTERED</p>
 
 </div>
 
@@ -47,19 +47,6 @@ include('view/footer.php');
 <script src="bootstrap-star-rating/js/locales/LANG.js"></script>
 
 
-<script>
-    var swiper = new Swiper('.swiper-container', {
-        pagination: '.swiper-pagination',
-        nextButton: '.swiper-button-next',
-        prevButton: '.swiper-button-prev',
-        paginationClickable: true,
-        spaceBetween: 30,
-        centeredSlides: true,
-        autoplay: 2500,
-        loop: true,
-        autoplayDisableOnInteraction: false
-    });
-</script>
 
 </body>
 </html>

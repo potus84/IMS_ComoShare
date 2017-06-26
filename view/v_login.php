@@ -101,7 +101,7 @@ if (isset($_POST['login']) && !empty($_POST['username'])
         $name = $row[3] . " " . $row[4];
 
         $_SESSION["name"] = $name;
-        $_SESSION["loggedin"] = 1;
+        $_SESSION["user_id"] = $row[0];
 
         header("Location: welcome.php");
         exit();
