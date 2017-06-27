@@ -1,5 +1,6 @@
 <?php
 $conn = new mysqli("localhost", "root", "", "ims");
+$result = false;
 
 if (isset($_SERVER['PATH_INFO'])) {
     $path_params = explode('/', trim($_SERVER['PATH_INFO']));
@@ -16,7 +17,7 @@ $longi = $input['longi'];
 $img = $input['img'];
 $price = $input['price'];
 $availability = $input['availability'];
-$description = $input['roomname'];
+$description = $input['description'];
 
 switch ($_SERVER['REQUEST_METHOD']) {
 
@@ -40,13 +41,26 @@ switch ($_SERVER['REQUEST_METHOD']) {
                 echo "Unsupported path!";
             }
         }
-
         break;
 
+    case 'POST':
+        $sql = "insert into accommodation(roomname, city, lat, longi, img, price, availability, description)
+                          values ('$roomname', '$city', '$lat', '$longi', '$img', '$price', '$availability', '$description')";
+        $result = $conn->query($sql);
+
+        http_response_code(201);
+        $id_arry = array('id' => $conn->insert_id);
+        print_r(json_encode($id_arry));
+        break;
 
     default:
         http_response_code(400);
         echo "Unsupported method!";
+}
+
+if ($result == false) {
+    http_response_code(500);
+    echo "Unknown error!";
 }
 
 ?>
