@@ -38,7 +38,7 @@ switch ($_SERVER['REQUEST_METHOD']) {
                 print_r(json_encode($list));
             } else {
                 http_response_code(404);
-                echo "Unsupported path!";
+                die("Unsupported path!");
             }
         }
         break;
@@ -95,7 +95,7 @@ switch ($_SERVER['REQUEST_METHOD']) {
 
     default:
         http_response_code(400);
-        echo "Unsupported method!";
+        die("Unsupported method!");
 }
 
 if ($result == false) {
