@@ -78,6 +78,21 @@ switch ($_SERVER['REQUEST_METHOD']) {
         }
         break;
 
+    case 'DELETE':
+        if (isset($path_params[1])) {
+            if ($path_params[1] == "accommodations") {
+                if (isset($path_params[2]) && is_numeric($path_params[2])) {
+                    $sql = "delete from accommodation where id=" . $path_params[2];
+                    $result = $conn->query($sql);
+                    http_response_code(204);
+                } else {
+                    http_response_code(400);
+                    die("No ID provided!");
+                }
+            }
+        }
+        break;
+
     default:
         http_response_code(400);
         echo "Unsupported method!";
