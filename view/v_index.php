@@ -67,7 +67,7 @@ if (session_status() == PHP_SESSION_NONE) {
                         </div>
                         <a href="product-detail.php?id=<?php echo $house['id']?>" class="quick-view">Details</a>
                         <div class="rating">
-                             <input id='input-id6' name='input-4' class='rating rating-loading' data-min='0' data-max='5' data-step='1' data-show-clear='false' data-show-caption='false' data-size='xs'>
+                             <!-- <input id='input-id6' name='input-4' class='rating rating-loading' data-min='0' data-max='5' data-step='1' data-show-clear='false' data-show-caption='false' data-size='xs'> -->
                         </div>
                     </div>
                 </div>

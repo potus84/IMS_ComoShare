@@ -30,6 +30,7 @@ include('view/header.php');
 
         <?php
          echo "<p class='top-product'>Welcome " .  $_SESSION["name"] . "! </p>";
+         echo "<p class='top-product'>As the admin role " .  $_SESSION["admin"] . "! </p>";
         ?>
 
     </div>

@@ -14,7 +14,6 @@ require('model/m_accommodation.php');
 				$this->deleteReservationOfUser();
 			}
 			else{
-				echo "To show for admin";
 				$this->showReservationForAdmin();
 			}
 
@@ -46,14 +45,13 @@ require('model/m_accommodation.php');
 			}
 		}
 		public function showReservationForAdmin()
-		{
+		{	
 			$db = new Reservation();
 			$extra_db = new Accommodation();
-			$reserves = $db->showAllReservation();
-			
-				require 'view/v_reservationBackOffice.php';
-			}
+			$reserves = $db->showAllReservation();			
+			require 'view/v_reservationBackOffice.php';			
 		}
+	}
 
 
 

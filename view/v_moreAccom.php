@@ -6,7 +6,7 @@ if (session_status() == PHP_SESSION_NONE) {
 
 <html>
     <head>
-        <title>CommoShare - Main page</title>
+        <title>CommoShare - More options</title>
         <link href="http://s3.amazonaws.com/codecademy-content/courses/ltp/css/shift.css" rel="stylesheet">
         <link rel="stylesheet" href="http://s3.amazonaws.com/codecademy-content/courses/ltp/css/bootstrap.css">
         <link rel="stylesheet" href="bootstrap-3.3.7-dist/css/bootstrap.min.css">
@@ -46,7 +46,7 @@ if (session_status() == PHP_SESSION_NONE) {
                             <p>Available</p>
                         </div>
                         <a href="product-detail.php?id=<?php echo $house['id']?>" class="quick-view">Details</a>
-                        <input id='input-id6' name='input-4' class='rating rating-loading' data-min='0' data-max='5' data-step='1' data-show-clear='false' data-show-caption='false' data-size='xs'>
+                        <!-- <input id='input-id6' name='input-4' class='rating rating-loading' data-min='0' data-max='5' data-step='1' data-show-clear='false' data-show-caption='false' data-size='xs'> -->
                     </div>
                 </div>
 

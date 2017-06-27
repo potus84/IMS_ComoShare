@@ -6,7 +6,7 @@ if (session_status() == PHP_SESSION_NONE) {
 
 <!doctype html>
 <head>
-	<title>CommoShare - Main page</title>
+	<title>CommoShare - <?php echo $room['roomname']?> details</title>
 	<link href="http://s3.amazonaws.com/codecademy-content/courses/ltp/css/shift.css" rel="stylesheet">
 	<link rel="stylesheet" href="http://s3.amazonaws.com/codecademy-content/courses/ltp/css/bootstrap.css">
 	<link rel="stylesheet" href="bootstrap-3.3.7-dist/css/bootstrap.min.css">

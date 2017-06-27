@@ -21,6 +21,11 @@
         }
 
     ?>
+    <?php 
+    if(isset($_SESSION['admin']) && $_SESSION['admin']==1) 
+        echo '<style>#userTab{display: none} #adminTab{display: inline}</style>';
+    else echo '<style>#userTab{display: inline} #adminTab{display: none}</style>';
+    ?>
 
 </div>
 <div class="menu-wrap container-fluid">
@@ -46,7 +51,11 @@
                 </ul>
                 
             </li>
-            <li href="#"><a href="myReservation.php">My Reservation</a>
+            <li href="#" id="userTab"><a href="myReservation.php">My Reservation</a>
+            </li>
+            <li href="#" id="adminTab"><a href="reservationBackOffice.php">Manage Reservations</a>
+            </li>
+            <li href="#" id="adminTab"><a href="productBackOffice.php">Manage Accommodations</a>
             </li>
         </ul>
     </nav>

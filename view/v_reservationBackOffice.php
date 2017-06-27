@@ -6,7 +6,7 @@ if (session_status() == PHP_SESSION_NONE) {
 
 <html>
     <head>
-        <title>CommoShare - My Reservation</title>
+        <title>CommoShare - Manage Reservation</title>
         <link href="http://s3.amazonaws.com/codecademy-content/courses/ltp/css/shift.css" rel="stylesheet">
         <link rel="stylesheet" href="http://s3.amazonaws.com/codecademy-content/courses/ltp/css/bootstrap.css">
         <link rel="stylesheet" href="bootstrap-3.3.7-dist/css/bootstrap.min.css">
@@ -69,10 +69,10 @@ if (session_status() == PHP_SESSION_NONE) {
                         <?php 
                                 if($reserve['status']==NULL){ ?>
                         <div>
-                            <a href="reservationBackOffice.php?op=approve&id=<?php echo $reserve['id']?>">Approve</a>
+                            <a href="reservationBackOffice.php?op=approve&id=<?php echo $reserve['id']?>" >Approve</a>
                         </div>
                         <?php }else if($reserve['status']==-1){ ?>
-                            <a href="reservationBackOffice.php?op=delete&id=<?php echo $reserve['id']?>">Delete</a>
+                            <a href="reservationBackOffice.php?op=delete&id=<?php echo $reserve['id']?>" class="quick-view">Delete</a>
                         <?php }?>
                         
                     </div>
