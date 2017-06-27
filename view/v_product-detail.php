@@ -15,7 +15,7 @@ if (session_status() == PHP_SESSION_NONE) {
 	<link rel="stylesheet" href="Swiper-3.3.1/dist/css/swiper.min.css">
 	<link rel="stylesheet" href="bootstrap-star-rating/css/star-rating.css">
 	<link rel="stylesheet" href="bootstrap-star-rating/themes/krajee-svg/theme.css">
-	<!-- <link rel="stylesheet" href="css/index.css"> -->
+	<link rel="stylesheet" href="css/index.css">
 	<link rel="stylesheet" href="css/product-detail.css">
 	<style type="text/css">
 
@@ -31,8 +31,7 @@ if (session_status() == PHP_SESSION_NONE) {
 	?>
 	<div class="room-detail container">
 		<div class="left-img col-sm-6">
-			<div class="ft-img" style="background-image: url(<?php echo $room['img']?>)">
-				
+			<div class="ft-img" style="background-image: url(<?php echo $room['img']?>)">	
 			</div>
 
 		</div> <!-- /left image -->

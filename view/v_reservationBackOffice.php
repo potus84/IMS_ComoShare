@@ -29,7 +29,7 @@ if (session_status() == PHP_SESSION_NONE) {
         <div class="content container">
             <p class="top-product">ALL THE RESERVATIONS</p>
             <?php 
-                $i=0;
+                
                 if(is_array($reserves) || is_object(reserves)){
                     foreach ($reserves as $reserve) {
                     $extra_db = new Accommodation();
