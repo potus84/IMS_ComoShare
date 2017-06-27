@@ -53,6 +53,31 @@ switch ($_SERVER['REQUEST_METHOD']) {
         print_r(json_encode($id_arry));
         break;
 
+    case 'PUT':
+        if (isset($path_params[1])) {
+            if ($path_params[1] == "accommodations") {
+                if (isset($path_params[2]) && is_numeric($path_params[2])) {
+                    $sql = "update accommodation set
+                    roomname = '$roomname',
+                    city = '$city',
+                    lat = '$lat',
+                    longi = '$longi',
+                    img = '$img',
+                    price = '$price',
+                    availability = '$availability',
+                    description = '$description'
+                    where id=" . $path_params[2];
+
+                    $result = $conn->query($sql);
+                    http_response_code(204);
+                } else {
+                    http_response_code(400);
+                    die("No ID provided!");
+                }
+            }
+        }
+        break;
+
     default:
         http_response_code(400);
         echo "Unsupported method!";
