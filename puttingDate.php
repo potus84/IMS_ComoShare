@@ -2,6 +2,14 @@
 if (session_status() == PHP_SESSION_NONE) {
     session_start();
 }
+    if (isset($_SESSION['user_id']))
+    {
+        echo "loggedin";
+    }
+    else {
+        echo "nosession";
+        header("Location: login.php");
+    }
 ?>
 
 <!doctype html>
