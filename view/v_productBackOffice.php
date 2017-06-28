@@ -1,3 +1,21 @@
+<?php
+if (session_status() == PHP_SESSION_NONE) {
+    session_start();
+}
+if (isset($_SESSION['user_id'])) {
+    if (isset($_SESSION['admin'])) {
+        if ($_SESSION['admin'] != 1) {
+            header("Location: login.php");
+        }
+    } else {
+        header("Location: login.php");
+    }
+
+} else {
+    header("Location: login.php");
+}
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,6 +28,7 @@
 	<link rel="stylesheet" href="Swiper-3.3.1/dist/css/swiper.min.css">
 	<link rel="stylesheet" href="bootstrap-star-rating/css/star-rating.css">
 	<link rel="stylesheet" href="bootstrap-star-rating/themes/krajee-svg/theme.css">
+	<link rel="stylesheet" href="css/index.css">
 </head>
 
 <style type="text/css">
@@ -28,22 +47,24 @@
 	<?php include 'view/header.php';?>
 	<div class="container fluid room-container">
 		<h2>Accommodation Back Office</h2>
-		<form action="productBackOffice.php?op=new">
-			<input type="submit" value="Add new room" />
-		</form>
-		<span><a href="productBackOffice.php?op=new">Add new room</a></span>
+		<div class="btnBook">
+			<a href="productBackOffice.php?op=new">Add new room</a>					
+		</div>
 		<?php foreach($houses as $house){?>
 			<div class="room_record col-sm-4">
 				<p><?php echo $house['roomname']?></p>
 				<img src=<?php echo $house['img']?> width="200px">
 				<p><?php echo $house['price']?> &euro;</p>
 				<p>City: <?php echo $house['city']?></p>
-				<button>Edit</button>
 				<!-- <form action = "productBackOffice.php/delete?id=<?php echo $house['id']?>">
 					<input type="submit" value="Delete" />
 				</form> -->
-				<a href="productBackOffice.php?op=update&id=<?php echo $house['id']?>">Edit</a>
-				<a href="productBackOffice.php?op=delete&id=<?php echo $house['id']?>">Delete</a>
+				<div class="btnBook">
+					<a href="productBackOffice.php?op=update&id=<?php echo $house['id']?>">Edit</a>					
+				</div>
+				<div class="btnBook">
+					<a href="productBackOffice.php?op=delete&id=<?php echo $house['id']?>">Delete</a>
+				</div>
 				<p><?php echo $house['description']?></p>
 			</div>
 			<?php } ?>

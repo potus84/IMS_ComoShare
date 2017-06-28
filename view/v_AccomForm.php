@@ -1,3 +1,13 @@
+<?php
+if (session_status() == PHP_SESSION_NONE) {
+    session_start();
+}
+if (isset($_SESSION['user_id'])) {
+} else {
+    header("Location: login.php");
+}
+?>
+
 <!doctype html>
 <head>
 	<title><?php echo $title; ?></title>

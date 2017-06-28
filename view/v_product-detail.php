@@ -1,6 +1,16 @@
+<?php
+if (session_status() == PHP_SESSION_NONE) {
+    session_start();
+}
+if (isset($_SESSION['user_id'])) {
+} else {
+    header("Location: login.php");
+}
+?>
+
 <!doctype html>
 <head>
-	<title>CommoShare - Main page</title>
+	<title>CommoShare - <?php echo $room['roomname']?> details</title>
 	<link href="http://s3.amazonaws.com/codecademy-content/courses/ltp/css/shift.css" rel="stylesheet">
 	<link rel="stylesheet" href="http://s3.amazonaws.com/codecademy-content/courses/ltp/css/bootstrap.css">
 	<link rel="stylesheet" href="bootstrap-3.3.7-dist/css/bootstrap.min.css">
@@ -9,7 +19,7 @@
 	<link rel="stylesheet" href="Swiper-3.3.1/dist/css/swiper.min.css">
 	<link rel="stylesheet" href="bootstrap-star-rating/css/star-rating.css">
 	<link rel="stylesheet" href="bootstrap-star-rating/themes/krajee-svg/theme.css">
-	<!-- <link rel="stylesheet" href="css/index.css"> -->
+	<link rel="stylesheet" href="css/index.css">
 	<link rel="stylesheet" href="css/product-detail.css">
 	<style type="text/css">
 
@@ -25,8 +35,7 @@
 	?>
 	<div class="room-detail container">
 		<div class="left-img col-sm-6">
-			<div class="ft-img" style="background-image: url(<?php echo $room['img']?>)">
-				
+			<div class="ft-img" style="background-image: url(<?php echo $room['img']?>)">	
 			</div>
 
 		</div> <!-- /left image -->
@@ -37,7 +46,7 @@
 			<label class="price"><?php echo $room['price']?>&euro;</label>
 			<div id="map"></div>
 			<div class="btnBook">
-				<a href="reservationPage.php">Books</a>
+				<a href="puttingDate.php?accommodation_id=<?php echo $room['id']?>">Books</a>
 				
 			</div>
 		</div> <!-- /right content -->

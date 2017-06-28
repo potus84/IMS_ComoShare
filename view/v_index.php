@@ -1,3 +1,13 @@
+<?php
+if (session_status() == PHP_SESSION_NONE) {
+    session_start();
+}
+if (isset($_SESSION['user_id'])) {
+} else {
+    header("Location: login.php");
+}
+?>
+
 <html>
 <head>
     <title>CommoShare - Main page</title>
@@ -12,20 +22,8 @@
     <link rel="stylesheet" href="css/index.css">
     <!--Script-->
     <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
-    <script src="jquery.cycle.all.js"></script>
 
-    <script> 
-        $(document).ready(function() {
-            $('#shuffle').cycle({ 
-                fx:     'shuffle', 
-                delay:  -500
-            });
-            $('#caption').cycle({ 
-                fx:     'scrollRight', 
-                delay:  -500
-            });
-        });
-    </script> <!-- /End of script -->
+
 
 </head>
 
@@ -73,7 +71,7 @@
                         </div>
                         <a href="product-detail.php?id=<?php echo $house['id']?>" class="quick-view">Details</a>
                         <div class="rating">
-                             <input id='input-id6' name='input-4' class='rating rating-loading' data-min='0' data-max='5' data-step='1' data-show-clear='false' data-show-caption='false' data-size='xs'>
+                             <!-- <input id='input-id6' name='input-4' class='rating rating-loading' data-min='0' data-max='5' data-step='1' data-show-clear='false' data-show-caption='false' data-size='xs'> -->
                         </div>
                     </div>
                 </div>

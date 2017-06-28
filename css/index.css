@@ -193,6 +193,7 @@
 	text-align: right;
 }
 
+
 .header .register-login ul {
 	margin-top: 30px;
 	border-right: 1px solid #ddd;
@@ -218,6 +219,10 @@
 	background: #9999ff;
 	color: #FFFFFF;
 	font-weight: bold;
+}
+
+.header .register-login .sign-in p{
+	padding: 5px 10px;
 }
 
 .header .register-login form {
@@ -372,17 +377,18 @@
 }
 
 .content .list-top-product .product-item {
-	padding: 0;
-	position: relative;
 	padding: 10px;
+	position: relative;
+	margin: 10px;
 	border: 1px solid #ccc;
 	border-top-left-radius: 4px;
 	border-top-right-radius: 4px;
+
 }
 
 
 .content .list-top-product .product-item p {
-	padding: 0;
+	
 }
 
 .content .list-top-product .product-item .bg-img {

@@ -10,7 +10,7 @@ if (isset($_SESSION['user_id'])) {
 
 <html>
     <head>
-        <title>CommoShare - More options</title>
+        <title>CommoShare - Manage Reservation</title>
         <link href="http://s3.amazonaws.com/codecademy-content/courses/ltp/css/shift.css" rel="stylesheet">
         <link rel="stylesheet" href="http://s3.amazonaws.com/codecademy-content/courses/ltp/css/bootstrap.css">
         <link rel="stylesheet" href="bootstrap-3.3.7-dist/css/bootstrap.min.css">
@@ -31,12 +31,13 @@ if (isset($_SESSION['user_id'])) {
         
         <!--Content-->
         <div class="content container">
-            <p class="top-product">MORE ACCOMODATIONS</p>
+            <p class="top-product">ALL THE RESERVATIONS</p>
             <?php 
-                $i=0;
-                if(is_array($houses) || is_object($houses)){
-                    foreach ($houses as $house) {
-                    $i++;
+                
+                if(is_array($reserves) || is_object(reserves)){
+                    foreach ($reserves as $reserve) {
+                    $extra_db = new Accommodation();
+                    $house = $extra_db->getAccommodation($reserve['accommodation_id']);
             ?>
             <div class="product-block col-sm-4 col-xs-12">
                 <div class="list-top-product col-sm-12 col-xs-12">
@@ -45,22 +46,46 @@ if (isset($_SESSION['user_id'])) {
                             <div class='ft-img col-sm-12' style='background-image:url(<?php echo $house['img']?>)'></div>
                         </div>
                         <p class='title col-sm-12'><?php echo $house['roomname']?></p>
-                        <div class='price col-sm-12'>
-                            <p class="price-1"><?php echo $house['price']?>&euro;</p>
-                            <p>Available</p>
+                        <div>
+                            Check-in: 
+                            <p><?php echo $reserve['check_in']?></p>
                         </div>
-                        <a href="product-detail.php?id=<?php echo $house['id']?>" class="quick-view">Details</a>
-                        <!-- <input id='input-id6' name='input-4' class='rating rating-loading' data-min='0' data-max='5' data-step='1' data-show-clear='false' data-show-caption='false' data-size='xs'> -->
+                        <div>
+                            Check-out: 
+                            <p><?php echo $reserve['check_out']?></p>
+                        </div>
+                        <div>
+                            Status: 
+                            <p>
+                            <?php 
+                                if($reserve['status']==NULL){
+                                    echo 'Waiting for approve';
+                                }else if($reserve['status']==1){
+                                    echo 'Approved';
+                                }else if($reserve['status']==-1){
+                                    echo 'Cancelling';
+                                }
+
+                            ?>
+                                
+                            </p>
+                        </div>
+                        <?php 
+                                if($reserve['status']==NULL){ ?>
+                        <div>
+                            <a href="reservationBackOffice.php?op=approve&id=<?php echo $reserve['id']?>" >Approve</a>
+                        </div>
+                        <?php }else if($reserve['status']==-1){ ?>
+                            <a href="reservationBackOffice.php?op=delete&id=<?php echo $reserve['id']?>" class="quick-view">Delete</a>
+                        <?php }?>
+                        
                     </div>
                 </div>
 
 
             </div>
             <?php 
-                if($i==12){
-                    break;
-                }
-
+                
                 } 
             }
             ?>
