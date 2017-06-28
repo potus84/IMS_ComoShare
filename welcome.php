@@ -2,12 +2,10 @@
 if (session_status() == PHP_SESSION_NONE) {
     session_start();
 }
-    if (isset($_SESSION['user_id']))
-    {
-    }
-    else {
-        header("Location: login.php");
-    }
+if (isset($_SESSION['user_id'])) {
+} else {
+    header("Location: login.php");
+}
 ?>
 
 <html>
@@ -36,6 +34,7 @@ include('view/header.php');
 
         <?php
          echo "<p class='top-product'>Welcome " .  $_SESSION["name"] . "! </p>";
+         echo "<p class='top-product'>As the admin role " .  $_SESSION["admin"] . "! </p>";
         ?>
 
     </div>

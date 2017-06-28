@@ -2,14 +2,12 @@
 if (session_status() == PHP_SESSION_NONE) {
     session_start();
 }
-    if (isset($_SESSION['user_id']))
-    {
-        echo "loggedin";
-    }
-    else {
-        echo "nosession";
-        header("Location: login.php");
-    }
+if (isset($_SESSION['user_id'])) {
+    echo "loggedin";
+} else {
+    echo "nosession";
+    header("Location: login.php");
+}
 ?>
 
 <!doctype html>
@@ -84,7 +82,7 @@ if (session_status() == PHP_SESSION_NONE) {
 	</div>
 	<script type="text/javascript">
 		$(function () {
-			$('#datetimepicker1').datetimepicker({format: 'YY-MM-DD'});
+			$('#datetimepicker1').datetimepicker({format: 'YY-MM-DD', useCurrent: false});
 			$('#datetimepicker2').datetimepicker({format: 'YY-MM-DD'});
 			$('#datetimepicker2').datetimepicker({
             useCurrent: false //Important! See issue #1075

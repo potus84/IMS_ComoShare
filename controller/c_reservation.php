@@ -29,7 +29,7 @@ require('model/m_accommodation.php');
 			if(isset($_SESSION['user_id'])){
 				$user_id = $_SESSION['user_id'];
 				$reserves = $db->showReservation($user_id);
-
+				require 'view/v_showReservation.php';
 				// if(is_array($reserves) || is_object(reserves)){
 				// 	foreach ($reserves as $reserve) {
 
@@ -49,8 +49,9 @@ require('model/m_accommodation.php');
 
 			} else{
 				echo 'Please logging in to continue';
+				header('Location: '.'login.php');
 			}
-			require 'view/v_showReservation.php';
+			
 		}
 
 		public function cancelReservationForUser()

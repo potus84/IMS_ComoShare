@@ -102,8 +102,9 @@ if (isset($_POST['login']) && !empty($_POST['username'])
 
         $_SESSION['name'] = $name;
         $_SESSION['user_id'] = $row[0];
-        $_SESSION['admin'] = $row[7];
-
+        $_SESSION['admin'] = $row[7]==1?1:0;
+        $_GLOBALS['isAdmin'] = $row[7]==1?1:0;
+        
         header("Location: welcome.php");
         exit();
 
